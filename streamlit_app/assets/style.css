@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
 * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu, footer { visibility: hidden; }
 .main { background-color: #0E1117; padding: 2rem 3rem; }
 
 section[data-testid="stSidebar"] {
