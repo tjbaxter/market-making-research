@@ -281,10 +281,10 @@ if 'exp3_results' in st.session_state:
     """)
 
 else:
-render_info_box(
+    render_info_box(
         "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
-    box_type='info'
-)
+        box_type='info'
+    )
 
 st.markdown("---")
 
