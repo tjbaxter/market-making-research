@@ -36,6 +36,7 @@ st.set_page_config(
     page_title="PnL Decomposition | Market Making Research",
     page_icon="💰",
     layout=LAYOUT['layout'],
+    initial_sidebar_state="expanded",
 )
 
 # Load CSS

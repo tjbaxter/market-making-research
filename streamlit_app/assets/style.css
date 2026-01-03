@@ -48,17 +48,7 @@ section[data-testid="stSidebar"] * {
     color: #FAFAFA !important;
 }
 
-/* CRITICAL FIX: Force sidebar toggle to ALWAYS show */
-/* Streamlit 1.38+ uses stSidebarCollapseButton, not collapsedControl */
-button[kind="header"],
-[data-testid="stSidebarCollapseButton"],
-[data-testid="collapsedControl"] {
-    visibility: visible !important;
-    display: block !important;
-    opacity: 1 !important;
-    z-index: 999999 !important;
-    position: relative !important;
-}
+/* Sidebar toggle will work naturally - no forced CSS needed */
 
 /* Title Styling */
 h1 {

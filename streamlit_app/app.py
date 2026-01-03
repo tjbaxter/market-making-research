@@ -17,7 +17,7 @@ st.set_page_config(
     page_title=LAYOUT['page_title'],
     page_icon=LAYOUT['page_icon'],
     layout=LAYOUT['layout'],
-    initial_sidebar_state=LAYOUT['initial_sidebar_state'],
+    initial_sidebar_state="expanded",
 )
 
 # Load custom CSS

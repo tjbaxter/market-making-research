@@ -3,15 +3,18 @@ primaryColor = "#00FF41"
 backgroundColor = "#0E1117"
 secondaryBackgroundColor = "#1E1E1E"
 textColor = "#FAFAFA"
-font = "sans-serif"
+font = "sans serif"
 
 [server]
 headless = true
+runOnSave = false
 port = 8501
+enableCORS = false
+enableXsrfProtection = false
 
 [browser]
 gatherUsageStats = false
 
 [ui]
 hideTopBar = false
-
+hideSidebarNav = false

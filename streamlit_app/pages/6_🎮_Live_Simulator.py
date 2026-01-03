@@ -32,6 +32,7 @@ st.set_page_config(
     page_title="Live Simulator | Market Making Research",
     page_icon="🎮",
     layout=LAYOUT['layout'],
+    initial_sidebar_state="expanded",
 )
 
 css_file = Path(__file__).parent.parent / 'assets' / 'style.css'

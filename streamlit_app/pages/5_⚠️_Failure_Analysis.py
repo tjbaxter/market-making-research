@@ -27,6 +27,7 @@ st.set_page_config(
     page_title="Failure Analysis | Market Making Research",
     page_icon="⚠️",
     layout=LAYOUT['layout'],
+    initial_sidebar_state="expanded",
 )
 
 css_file = Path(__file__).parent.parent / 'assets' / 'style.css'
