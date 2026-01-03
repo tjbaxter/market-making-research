@@ -1,24 +1,79 @@
-/* Market Making Research Dashboard - Professional Quant Trader Aesthetic */
+/* ============================================
+   Market Making Research Dashboard
+   Professional Quant Trader Aesthetic
+   ============================================ */
+
+/* Import Modern Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
-* { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-footer { visibility: hidden; }
-.main { background-color: #0E1117; padding: 2rem 3rem; }
+/* Global Styles */
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-/* FORCE sidebar toggle to show */
-button[kind="header"] { visibility: visible !important; display: block !important; }
-header { visibility: visible !important; }
-[data-testid="collapsedControl"] { visibility: visible !important; display: block !important; }
+/* Hide ONLY the hamburger menu and footer - PRESERVE sidebar toggle */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
 
+/* DO NOT hide header - sidebar toggle lives there */
+
+/* Main Container */
+.main {
+    background-color: #0E1117;
+    padding: 2rem 3rem;
+}
+
+/* Sidebar Styling */
 section[data-testid="stSidebar"] {
     background: linear-gradient(180deg, #1E1E1E 0%, #0E1117 100%);
     border-right: 1px solid #2E2E2E;
 }
 
-h1 { color: #00FF41 !important; font-weight: 700 !important; font-size: 2.5rem !important; }
-h2 { color: #00D9FF !important; font-weight: 600 !important; font-size: 1.8rem !important; }
-h3 { color: #FAFAFA !important; font-weight: 500 !important; font-size: 1.4rem !important; }
+section[data-testid="stSidebar"] .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 
+/* Sidebar Text */
+section[data-testid="stSidebar"] * {
+    color: #FAFAFA !important;
+}
+
+/* IMPORTANT: Force sidebar toggle to always show */
+button[kind="header"] {
+    visibility: visible !important;
+    display: block !important;
+}
+
+[data-testid="collapsedControl"] {
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Title Styling */
+h1 {
+    color: #00FF41 !important;
+    font-weight: 700 !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: -0.02em !important;
+}
+
+h2 {
+    color: #00D9FF !important;
+    font-weight: 600 !important;
+    font-size: 1.8rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+h3 {
+    color: #FAFAFA !important;
+    font-weight: 500 !important;
+    font-size: 1.4rem !important;
+}
+
+/* Metric Cards */
 div[data-testid="metric-container"] {
     background: linear-gradient(135deg, #1E1E1E 0%, #2A2A2A 100%);
     border: 1px solid #2E2E2E;
@@ -34,6 +89,15 @@ div[data-testid="metric-container"]:hover {
     transform: translateY(-2px);
 }
 
+/* Metric Values */
+div[data-testid="metric-container"] label {
+    color: #B0B0B0 !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
 div[data-testid="metric-container"] [data-testid="stMetricValue"] {
     color: #00FF41 !important;
     font-size: 2rem !important;
@@ -41,6 +105,7 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
     font-family: 'Fira Code', monospace !important;
 }
 
+/* Buttons */
 .stButton button {
     background: linear-gradient(135deg, #00FF41 0%, #00D9FF 100%);
     color: #0E1117 !important;
@@ -48,6 +113,7 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
     border-radius: 8px;
     padding: 0.75rem 2rem;
     font-weight: 600;
+    font-size: 1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 255, 65, 0.3);
 }
@@ -57,6 +123,7 @@ div[data-testid="metric-container"] [data-testid="stMetricValue"] {
     transform: translateY(-2px);
 }
 
+/* Code Blocks */
 code {
     background-color: #1E1E1E !important;
     color: #00FF41 !important;
@@ -65,14 +132,31 @@ code {
     border-radius: 4px;
 }
 
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #1E1E1E; }
-::-webkit-scrollbar-thumb { background: #2E2E2E; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #00FF41; }
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
 
+::-webkit-scrollbar-track {
+    background: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2E2E2E;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00FF41;
+}
+
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.main > div { animation: fadeIn 0.5s ease-out; }
+.main > div {
+    animation: fadeIn 0.5s ease-out;
+}
