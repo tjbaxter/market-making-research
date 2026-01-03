@@ -409,4 +409,4 @@ col1, col2 = st.columns(2)
 with col1:
     st.page_link("pages/5_⚠️_Failure_Analysis.py", label="← Previous: Failure Analysis", icon="⚠️")
 with col2:
-    st.page_link("streamlit_app/app.py", label="← Back to Overview", icon="📊")
+    st.page_link("app.py", label="← Back to Overview", icon="📊")
