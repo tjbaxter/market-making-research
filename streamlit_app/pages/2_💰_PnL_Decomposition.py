@@ -195,7 +195,7 @@ if 'exp1_results' in st.session_state:
 else:
     # Show sample results
     render_info_box(
-        "Click 'Run Experiment' above to generate live results, or view sample findings below.",
+        "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
         box_type='info'
     )
     

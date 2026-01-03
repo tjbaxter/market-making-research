@@ -52,12 +52,12 @@ with st.expander("🧠 Adaptive Strategy Design", expanded=True):
     **Base Strategy:** Avellaneda-Stoikov optimal market making
     
     **Adaptive Layer:**
-```python
+    ```python
     if VPIN > 0.7:
         spread = base_spread × 1.5  # Widen 50%
     else:
         spread = base_spread         # Normal spread
-```
+    ```
     
     **Intuition:**
     - When toxicity detected → **widen spreads** to protect against adverse selection
@@ -281,40 +281,40 @@ if 'exp3_results' in st.session_state:
     """)
 
 else:
-    render_info_box(
-        "Click 'Run Experiment' above to compare static vs adaptive strategies, or view sample findings below.",
-        box_type='info'
-    )
-    
-    st.markdown("---")
-    
-    render_section_header("Sample Results")
-    
-    render_kpi_row({
-        'PnL Change': {
-            'value': '-5.2%',
-            'help': 'Slight decrease in gross PnL',
-        },
-        'Drawdown Reduction': {
-            'value': '40.8%',
-            'delta': 'Major improvement',
-            'delta_color': 'inverse',
-            'help': 'Significant risk reduction',
-        },
-        'Sharpe Improvement': {
-            'value': '+18.3%',
-            'delta': 'Better risk-adjusted',
-            'help': 'Worth the PnL trade-off',
-        },
-    })
-    
-    st.markdown("""
-    **Sample Finding:** Adaptive strategy achieves 40.8% drawdown reduction and 18.3% Sharpe 
-    improvement, at the cost of only 5.2% lower gross PnL. The risk-adjusted returns justify 
-    the trade-off for professional market makers.
+render_info_box(
+        "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
+    box_type='info'
+)
+
+st.markdown("---")
+
+render_section_header("Sample Results")
+
+render_kpi_row({
+    'PnL Change': {
+        'value': '-5.2%',
+        'help': 'Slight decrease in gross PnL',
+    },
+    'Drawdown Reduction': {
+        'value': '40.8%',
+        'delta': 'Major improvement',
+        'delta_color': 'inverse',
+        'help': 'Significant risk reduction',
+    },
+    'Sharpe Improvement': {
+        'value': '+18.3%',
+        'delta': 'Better risk-adjusted',
+        'help': 'Worth the PnL trade-off',
+    },
+})
+
+st.markdown("""
+**Sample Finding:** Adaptive strategy achieves 40.8% drawdown reduction and 18.3% Sharpe 
+improvement, at the cost of only 5.2% lower gross PnL. The risk-adjusted returns justify 
+the trade-off for professional market makers.
     
     *Run the experiment above to see full distribution analysis with interactive charts.*
-    """)
+""")
 
 st.markdown("---")
 

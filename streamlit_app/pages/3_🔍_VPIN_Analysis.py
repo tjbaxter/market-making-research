@@ -281,39 +281,39 @@ if 'exp2_results' in st.session_state:
     """)
 
 else:
-    render_info_box(
-        "Click 'Run Experiment' above to generate live VPIN analysis, or view sample findings below.",
-        box_type='info'
-    )
-    
-    st.markdown("---")
-    
-    render_section_header("Sample Results")
-    
-    render_kpi_row({
-        'Correlation': {
-            'value': '0.641',
-            'delta': 'Strong positive',
-            'help': 'Pearson correlation between VPIN and adverse selection',
-        },
-        'P-Value': {
-            'value': '0.0001',
-            'delta': 'Significant',
-            'help': 'Statistical significance (p < 0.05)',
-        },
-        'Loss Ratio': {
-            'value': '3.2x',
-            'help': 'How much losses increase when VPIN > 0.7',
-        },
-    })
-    
-    st.markdown("""
-    **Sample Finding:** When VPIN exceeds 0.7, adverse selection losses increase by 3.2x 
-    in the following 5 time periods. Strong correlation (r=0.641, p<0.001) validates VPIN 
-    as a reliable toxicity detector.
+render_info_box(
+        "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
+    box_type='info'
+)
+
+st.markdown("---")
+
+render_section_header("Sample Results")
+
+render_kpi_row({
+    'Correlation': {
+        'value': '0.641',
+        'delta': 'Strong positive',
+        'help': 'Pearson correlation between VPIN and adverse selection',
+    },
+    'P-Value': {
+        'value': '0.0001',
+        'delta': 'Significant',
+        'help': 'Statistical significance (p < 0.05)',
+    },
+    'Loss Ratio': {
+        'value': '3.2x',
+        'help': 'How much losses increase when VPIN > 0.7',
+    },
+})
+
+st.markdown("""
+**Sample Finding:** When VPIN exceeds 0.7, adverse selection losses increase by 3.2x 
+in the following 5 time periods. Strong correlation (r=0.641, p<0.001) validates VPIN 
+as a reliable toxicity detector.
     
     *Run the experiment above to see live VPIN evolution with interactive charts.*
-    """)
+""")
 
 st.markdown("---")
 
