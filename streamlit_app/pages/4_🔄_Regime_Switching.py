@@ -324,3 +324,4 @@ with col1:
     st.page_link("pages/3_🔍_VPIN_Analysis.py", label="← Previous: VPIN Analysis", icon="🔍")
 with col2:
     st.page_link("pages/5_⚠️_Failure_Analysis.py", label="Next: Failure Analysis →", icon="⚠️")
+# Force rebuild
