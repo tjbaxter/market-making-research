@@ -57,6 +57,24 @@ with st.sidebar:
 # Main content
 st.title("📊 Market Making Research")
 st.markdown("### *Quantifying Adverse Selection Costs in Modern Market Making*")
+
+# 🔥 BIG INTERACTIVE CTA - MAKE IT IMPOSSIBLE TO MISS
+st.markdown("")
+col1, col2, col3 = st.columns([1, 3, 1])
+with col2:
+    st.markdown("""
+    <div style='text-align: center; padding: 30px; background: linear-gradient(135deg, #00FF41 0%, #00D9FF 100%); border-radius: 15px; margin: 20px 0; box-shadow: 0 8px 16px rgba(0, 255, 65, 0.3);'>
+        <h1 style='color: #0E1117; margin: 0; font-size: 2.5rem;'>🎮 Interactive Demo</h1>
+        <p style='color: #0E1117; font-size: 1.2rem; margin: 15px 0; font-weight: 600;'>Adjust parameters and watch the market maker respond in real-time</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    if st.button("▶️  LAUNCH LIVE SIMULATOR", type="primary", use_container_width=True):
+        st.switch_page("pages/6_🎮_Live_Simulator.py")
+    
+    st.markdown("<p style='text-align: center; margin-top: 10px;'>👆 <strong>Start here</strong> - The most engaging part of this project!</p>", unsafe_allow_html=True)
+
+st.markdown("---")
 st.markdown("---")
 
 # Executive Summary
