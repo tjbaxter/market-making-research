@@ -94,10 +94,7 @@ fig = go.Figure(data=go.Heatmap(
         [0.7, '#90EE90'],    # Light green
         [1, '#00FF41']       # Bright green (good)
     ],
-    colorbar=dict(
-        title="Sharpe<br>Ratio",
-        titleside='right'
-    ),
+    colorbar=dict(title="Sharpe Ratio"),
     hovertemplate='VPIN Threshold: %{x:.2f}<br>Spread Multiplier: %{y:.2f}<br>Sharpe Ratio: %{z:.2f}<extra></extra>',
     text=np.round(data['sharpe_matrix'], 2),
     texttemplate='%{text}',
