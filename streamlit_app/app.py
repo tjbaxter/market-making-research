@@ -28,7 +28,7 @@ if css_file.exists():
 
 # Sidebar
 with st.sidebar:
-    st.image("https://via.placeholder.com/300x100/0E1117/00FF41?text=MM+Research", use_container_width=True)
+    st.markdown("# 📊 MM Research")
     st.markdown("---")
     st.markdown("### 🎯 Research Project")
     st.markdown("""
