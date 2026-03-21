@@ -30,7 +30,7 @@ except ImportError:
 
 st.set_page_config(
     page_title="Live Simulator | Market Making Research",
-    page_icon="🎮",
+    page_icon="",
     layout=LAYOUT['layout'],
     initial_sidebar_state="expanded",
 )
@@ -40,7 +40,7 @@ if css_file.exists():
     with open(css_file) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.title("🎮 Live Market Making Simulator")
+st.title(" Live Market Making Simulator")
 st.markdown("### *Interactive Strategy Testing*")
 st.markdown("---")
 
@@ -53,7 +53,7 @@ Visualize PnL, inventory, and VPIN dynamics as the simulation runs.
 if SIMULATION_AVAILABLE:
     # Sidebar Controls
     with st.sidebar:
-        st.markdown("### 🎛️ Simulation Parameters")
+        st.markdown("###  Simulation Parameters")
         
         st.markdown("#### Market Parameters")
         initial_price = st.number_input(
@@ -160,7 +160,7 @@ if SIMULATION_AVAILABLE:
         
         st.markdown("---")
         
-        run_button = st.button("🚀 Run Simulation", use_container_width=True, type="primary")
+        run_button = st.button(" Run Simulation", use_container_width=True, type="primary")
     
     # Main Content
     if run_button:
@@ -221,7 +221,7 @@ if SIMULATION_AVAILABLE:
             st.session_state['sim_results'] = results
             st.session_state['vpin_series'] = vpin_series
         
-        st.success("✅ Simulation complete!")
+        st.success(" Simulation complete!")
     
     # Display Results
     if 'sim_results' in st.session_state:
@@ -238,7 +238,7 @@ if SIMULATION_AVAILABLE:
         render_kpi_row({
             'Final PnL': {
                 'value': f"${results.final_pnl:,.0f}",
-                'delta': '✅ Profitable' if results.final_pnl > 0 else '❌ Loss',
+                'delta': ' Profitable' if results.final_pnl > 0 else ' Loss',
                 'delta_color': 'normal' if results.final_pnl > 0 else 'inverse',
             },
             'Spread Capture': {
@@ -247,7 +247,7 @@ if SIMULATION_AVAILABLE:
             },
             'Adverse Selection': {
                 'value': f"${decomp['adverse_selection']:,.0f}",
-                'delta': '⚠️ Toxic' if decomp['adverse_selection'] < -500 else '✅ Benign',
+                'delta': ' Toxic' if decomp['adverse_selection'] < -500 else ' Benign',
                 'delta_color': 'inverse' if decomp['adverse_selection'] < -500 else 'normal',
                 'help': 'Losses from informed traders',
             },
@@ -314,7 +314,7 @@ if SIMULATION_AVAILABLE:
         st.markdown("---")
         
         # Trade Details
-        with st.expander("📊 Trade Details", expanded=False):
+        with st.expander(" Trade Details", expanded=False):
             if not results.trades_df.empty:
                 st.dataframe(
                     results.trades_df,
@@ -325,7 +325,7 @@ if SIMULATION_AVAILABLE:
                 st.info("No trades executed")
         
         # PnL Decomposition
-        with st.expander("💰 PnL Decomposition", expanded=False):
+        with st.expander(" PnL Decomposition", expanded=False):
             col1, col2, col3 = st.columns(3)
             
             with col1:
@@ -361,7 +361,7 @@ if SIMULATION_AVAILABLE:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.markdown("#### 🎯 Try These Scenarios")
+            st.markdown("####  Try These Scenarios")
             st.markdown("""
             **Scenario 1: Benign Flow**
             - Toxicity: 0.0
@@ -379,7 +379,7 @@ if SIMULATION_AVAILABLE:
             """)
         
         with col2:
-            st.markdown("#### 📊 What to Watch")
+            st.markdown("####  What to Watch")
             st.markdown("""
             **PnL Chart:**
             - Green fill = profitable
@@ -405,9 +405,9 @@ else:
 
 st.markdown("---")
 
-st.markdown("### 📍 Navigate Research")
+st.markdown("###  Navigate Research")
 col1, col2 = st.columns(2)
 with col1:
-    st.page_link("pages/5_⚠️_Failure_Analysis.py", label="← Previous: Failure Analysis", icon="⚠️")
+    st.page_link("pages/5_⚠️_Failure_Analysis.py", label="← Previous: Failure Analysis", icon="")
 with col2:
-    st.page_link("app.py", label="← Back to Overview", icon="📊")
+    st.page_link("app.py", label="← Back to Overview", icon="")

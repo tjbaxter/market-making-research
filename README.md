@@ -11,20 +11,19 @@ This project simulates a market maker's operations and answers the research ques
 ### Key Features
 
 **Phase 1 - Core Simulation:**
-- Geometric Brownian Motion price simulation (with optional jumps)
-- Poisson order flow with exponential fill probability
-- Portfolio accounting with PnL decomposition
-- Market simulator orchestrating all components
+-Geometric Brownian Motion price simulation (with optional jumps)
+-Poisson order flow with exponential fill probability
+-Market simulator orchestrating all components
 
 **Phase 2 - Trading Strategies:**
-- Naive (constant spread baseline)
-- Inventory-Aware (asymmetric position-based quoting)
-- Avellaneda-Stoikov (optimal risk-aware market-making)
+-Naive (constant spread baseline)
+-Inventory-Aware (asymmetric position-based quoting)
+-Avellaneda-Stoikov (optimal risk-aware market-making)
 
 **Coming Soon:**
-- VPIN toxicity detection (Phase 3)
-- Research experiments (Phase 4)
-- Interactive dashboard (Phase 5)
+-VPIN toxicity detection (Phase 3)
+-Research experiments (Phase 4)
+-Interactive dashboard (Phase 5)
 
 ## Setup
 
@@ -89,17 +88,17 @@ pytest tests/test_price_process.py -v
 
 ## Project Structure
 
-- `src/simulation/` - Core simulation components (Phase 1)
-- `src/strategies/` - Trading strategies (Phase 2)
-- `tests/` - Comprehensive test suite
-- `examples/` - Usage examples and comparisons
-- `experiments/` - Research experiments (Phase 4 - Coming Soon)
-- `streamlit_app/` - Interactive dashboard (Phase 5 - Coming Soon)
+-`src/simulation/` - Core simulation components (Phase 1)
+-`src/strategies/` - Trading strategies (Phase 2)
+-`tests/` - Comprehensive test suite
+-`examples/` - Usage examples and comparisons
+-`experiments/` - Research experiments (Phase 4 - Coming Soon)
+-`streamlit_app/` - Interactive dashboard (Phase 5 - Coming Soon)
 
 ## References
 
-- Avellaneda, M., & Stoikov, S. (2008). High-frequency trading in a limit order book. *Quantitative Finance*, 8(3), 217-224.
-- Easley, D., López de Prado, M. M., & O'Hara, M. (2012). Flow toxicity and liquidity in a high-frequency world. *The Review of Financial Studies*, 25(5), 1457-1493.
+-Avellaneda, M., & Stoikov, S. (2008). High-frequency trading in a limit order book. *Quantitative Finance*, 8(3), 217-224.
+-Easley, D., López de Prado, M. M., & O'Hara, M. (2012). Flow toxicity and liquidity in a high-frequency world. *The Review of Financial Studies*, 25(5), 1457-1493.
 
 ## License
 

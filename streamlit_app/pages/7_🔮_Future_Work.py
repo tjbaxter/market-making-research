@@ -1,7 +1,5 @@
 """
-Future Work Page
-
-Demonstrates awareness of limitations and research extensions.
+Future Work Page.
 """
 
 import streamlit as st
@@ -18,7 +16,7 @@ from utils.metrics import render_section_header, render_info_box
 # Page config
 st.set_page_config(
     page_title="Future Work | Market Making Research",
-    page_icon="🔮",
+    page_icon="",
     layout=LAYOUT['layout'],
     initial_sidebar_state="expanded",
 )
@@ -30,11 +28,10 @@ if css_file.exists():
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Navigation
-st.page_link("app.py", label="← Back to Overview", icon="📊")
+st.page_link("app.py", label="← Back to Overview", icon="")
 
 # Header
-st.title("🔮 Future Work & Extensions")
-st.markdown("### *Research Limitations and Promising Directions*")
+st.title(" Future Work & Extensions")
 st.markdown("---")
 
 # Introduction
@@ -46,7 +43,7 @@ However, several limitations exist, and many exciting extensions could enhance b
 
 This page outlines:
 1. **Current Limitations** - Known simplifications
-2. **Future Work** - Promising research directions
+2. **Future Work** - Research directions
 3. **Alternative Approaches** - Methods not yet explored
 """)
 
@@ -56,7 +53,7 @@ st.markdown("---")
 # SECTION 1: LIMITATIONS
 # ============================================================================
 
-render_section_header("🚧 Current Limitations")
+render_section_header(" Current Limitations")
 
 col1, col2 = st.columns(2)
 
@@ -66,10 +63,10 @@ with col1:
     **Current:** Geometric Brownian Motion (GBM) with optional jumps
     
     **Limitations:**
-    - No stochastic volatility (GARCH effects ignored)
-    - No microstructure noise (bid-ask bounce)
+    - stochastic volatility (GARCH effects ignored)
+    - microstructure noise (bid-ask bounce)
     - Jump sizes are normally distributed (real jumps are fat-tailed)
-    - No intraday patterns (U-shaped volume curve)
+    - intraday patterns (U-shaped volume curve)
     
     **Impact:** May underestimate real-world risks, especially tail events.
     """)
@@ -80,8 +77,8 @@ with col1:
     
     **Limitations:**
     - Binary toxicity regimes (benign/toxic)
-    - No strategic trader behavior (all informed traders identical)
-    - No adverse selection from inventory imbalance
+    - strategic trader behavior (all informed traders identical)
+    - adverse selection from inventory imbalance
     - Simplified arrival rates (constant in each regime)
     
     **Impact:** VPIN may be more/less effective in practice.
@@ -92,10 +89,10 @@ with col1:
     **Current:** Single-asset, no order book dynamics
     
     **Limitations:**
-    - No multi-asset correlations
-    - No queue position dynamics
-    - No latency arbitrage
-    - No maker-taker fee structure
+    - multi-asset correlations
+    - queue position dynamics
+    - latency arbitrage
+    - maker-taker fee structure
     
     **Impact:** Real P&L attribution is more complex.
     """)
@@ -106,11 +103,11 @@ with col2:
     **Current:** Avellaneda-Stoikov with VPIN-based regime switching
     
     **Limitations:**
-    - No execution delays (assumes instant fills)
-    - No partial fills
-    - No order cancellation risk
+    - execution delays (assumes instant fills)
+    - partial fills
+    - order cancellation risk
     - Fixed lot sizes (no size optimization)
-    - No cross-asset hedging
+    - cross-asset hedging
     
     **Impact:** Real strategies are more sophisticated.
     """)
@@ -121,9 +118,9 @@ with col2:
     
     **Limitations:**
     - Parameters are reasonable but not empirically fitted
-    - No out-of-sample testing on real data
+    - out-of-sample testing on real data
     - Overfitting risk in parameter optimization
-    - No transaction costs calibration
+    - transaction costs calibration
     
     **Impact:** Results may not generalize to production.
     """)
@@ -134,7 +131,7 @@ with col2:
     
     **Limitations:**
     - Limited parameter grid resolution
-    - No high-frequency regime (1 step = 1 second, not milliseconds)
+    - high-frequency regime (1 step = 1 second, not milliseconds)
     - Sequential simulation (could parallelize)
     
     **Impact:** Some rare events may not be captured.
@@ -146,11 +143,11 @@ st.markdown("---")
 # SECTION 2: FUTURE WORK
 # ============================================================================
 
-render_section_header("🚀 Future Work Roadmap")
+render_section_header(" Future Work Roadmap")
 
 st.markdown("### Priority 1: Realism Enhancements")
 
-with st.expander("📈 **1.1 Advanced Price Models**", expanded=True):
+with st.expander(" **1.1 Advanced Price Models**", expanded=True):
     st.markdown("""
     **Objective:** Incorporate realistic price dynamics
     
@@ -167,12 +164,11 @@ with st.expander("📈 **1.1 Advanced Price Models**", expanded=True):
     **Expected impact:** 20-30% more realistic P&L variance
     """)
 
-with st.expander("🔗 **1.2 Multi-Asset Market Making**"):
+with st.expander(" **1.2 Multi-Asset Market Making**"):
     st.markdown("""
     **Objective:** Extend to correlated assets (e.g., SPY + QQQ)
     
     **Approaches:**
-    - Portfolio-level inventory management
     - Cross-asset hedging strategies
     - Correlation breakdown risk
     - Multi-dimensional VPIN
@@ -184,7 +180,7 @@ with st.expander("🔗 **1.2 Multi-Asset Market Making**"):
     **Expected impact:** Could reduce risk by 40%+ through diversification
     """)
 
-with st.expander("⏱️ **1.3 Order Book Dynamics**"):
+with st.expander("⏱ **1.3 Order Book Dynamics**"):
     st.markdown("""
     **Objective:** Model full limit order book (LOB)
     
@@ -203,7 +199,7 @@ with st.expander("⏱️ **1.3 Order Book Dynamics**"):
 
 st.markdown("### Priority 2: Advanced Strategies")
 
-with st.expander("🧠 **2.1 Reinforcement Learning for MM**"):
+with st.expander(" **2.1 Reinforcement Learning for MM**"):
     st.markdown("""
     **Objective:** Learn optimal policy via RL (vs closed-form A-S)
     
@@ -222,7 +218,7 @@ with st.expander("🧠 **2.1 Reinforcement Learning for MM**"):
     **Risks:** Sample inefficiency, overfitting, interpretability loss
     """)
 
-with st.expander("📊 **2.2 Machine Learning Toxicity Predictors**"):
+with st.expander(" **2.2 Machine Learning Toxicity Predictors**"):
     st.markdown("""
     **Objective:** Enhance VPIN with ML features
     
@@ -239,7 +235,7 @@ with st.expander("📊 **2.2 Machine Learning Toxicity Predictors**"):
     **Expected impact:** 20-30% improvement in toxicity detection accuracy
     """)
 
-with st.expander("🎯 **2.3 Optimal Execution Integration**"):
+with st.expander(" **2.3 Optimal Execution Integration**"):
     st.markdown("""
     **Objective:** Combine MM with optimal execution (Almgren-Chriss)
     
@@ -257,7 +253,7 @@ with st.expander("🎯 **2.3 Optimal Execution Integration**"):
 
 st.markdown("### Priority 3: Real Data & Deployment")
 
-with st.expander("💾 **3.1 Real Market Data Calibration**"):
+with st.expander(" **3.1 Real Market Data Calibration**"):
     st.markdown("""
     **Objective:** Fit model to real SPY/QQQ tick data
     
@@ -276,7 +272,7 @@ with st.expander("💾 **3.1 Real Market Data Calibration**"):
     **Data sources:** NYSE TAQ, LOBSTER, Polygon.io
     """)
 
-with st.expander("🏭 **3.2 Production Deployment Considerations**"):
+with st.expander(" **3.2 Production Deployment Considerations**"):
     st.markdown("""
     **Objective:** Bridge simulation → production
     
@@ -298,7 +294,7 @@ st.markdown("---")
 # SECTION 3: ALTERNATIVE APPROACHES
 # ============================================================================
 
-render_section_header("🔀 Alternative Approaches Not Explored")
+render_section_header(" Alternative Approaches Not Explored")
 
 comparison_data = {
     'Approach': [
@@ -349,31 +345,28 @@ st.markdown("---")
 # KEY TAKEAWAYS
 # ============================================================================
 
-render_section_header("💡 Key Takeaways")
+render_section_header(" Key Takeaways")
 
 st.markdown("""
 ### This Project Achieves:
 
-✅ **Rigorous simulation framework** with reproducible results  
-✅ **Quantifies adverse selection** (~68% of losses in toxic flow)  
-✅ **Validates VPIN** as a practical toxicity detector  
-✅ **Demonstrates adaptive strategies** improve risk-adjusted returns  
-✅ **Statistical rigor** (confidence intervals, hypothesis testing)  
-✅ **Parameter sensitivity analysis** (robustness validation)
+ **Rigorous simulation framework** with reproducible results  
+ **Quantifies adverse selection** (~68% of losses in toxic flow)  
+ **Validates VPIN** as a practical toxicity detector  
+ **Statistical rigor** (confidence intervals, hypothesis testing)  
+ **Parameter sensitivity analysis** (robustness validation)
 
 ### What's Missing (Acknowledged):
 
-⚠️ **Real market calibration** - parameters are reasonable but not fitted  
-⚠️ **Multi-asset dynamics** - single asset is simplified  
-⚠️ **Full order book** - no queue position modeling  
-⚠️ **Strategic traders** - all informed traders identical  
-⚠️ **Transaction costs** - not fully calibrated  
+ **Real market calibration** - parameters are reasonable but not fitted  
+ **Multi-asset dynamics** - single asset is simplified  
+ **Full order book** - no queue position modeling  
+ **Strategic traders** - all informed traders identical  
+ **Transaction costs** - not fully calibrated  
 
-### Why This is Still Valuable:
-
-1. **Conceptual**: Demonstrates key market microstructure concepts
+1. **Scope**: Key market microstructure concepts included
 2. **Methodological**: Provides template for MM research
-3. **Extensible**: Clean codebase for future enhancements
+3. **Extensible**: Structured for further changes
 4. **Transparent**: Explicitly documents assumptions and limitations
 
 ### For Future Researchers:

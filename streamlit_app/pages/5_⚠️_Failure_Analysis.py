@@ -25,7 +25,7 @@ except ImportError:
 
 st.set_page_config(
     page_title="Failure Analysis | Market Making Research",
-    page_icon="⚠️",
+    page_icon="",
     layout=LAYOUT['layout'],
     initial_sidebar_state="expanded",
 )
@@ -35,7 +35,7 @@ if css_file.exists():
     with open(css_file) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.title("⚠️ Failure Analysis")
+st.title(" Failure Analysis")
 st.markdown("### *Experiment 4: Edge Cases & Limitations*")
 st.markdown("---")
 
@@ -47,7 +47,7 @@ st.markdown("""
 """)
 
 # Failure Modes Overview
-with st.expander("🔍 Failure Modes Overview", expanded=True):
+with st.expander(" Failure Modes Overview", expanded=True):
     st.markdown("""
     We test four critical edge cases:
     
@@ -65,7 +65,7 @@ with st.expander("🔍 Failure Modes Overview", expanded=True):
     - Document mitigation strategies
     """)
 
-with st.expander("📋 Test Scenarios", expanded=False):
+with st.expander(" Test Scenarios", expanded=False):
     st.markdown("""
     **1. False Positives Test:**
     - Environment: Benign flow with 3x normal volume
@@ -92,14 +92,14 @@ with st.expander("📋 Test Scenarios", expanded=False):
 if EXPERIMENTS_AVAILABLE:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        if st.button("🚀 Run Failure Analysis", use_container_width=True):
+        if st.button(" Run Failure Analysis", use_container_width=True):
             with st.spinner("Testing failure modes... (this may take 2-3 minutes)"):
                 config = ExperimentConfig(n_simulations=20, n_steps=500)
                 experiment = FailureAnalysisExperiment(config)
                 results = experiment.run()
                 st.session_state['exp4_results'] = results
             
-            st.success("✅ Analysis complete!")
+            st.success(" Analysis complete!")
             st.rerun()
 
 if 'exp4_results' in st.session_state:
@@ -118,11 +118,11 @@ if 'exp4_results' in st.session_state:
     # Create severity classification
     def classify_severity(pnl):
         if pnl > 1000:
-            return "🟢 Low"
+            return " Low"
         elif pnl > -1000:
-            return "🟡 Medium"
+            return " Medium"
         else:
-            return "🔴 High"
+            return " High"
     
     render_kpi_row({
         'False Positives': {
@@ -153,7 +153,7 @@ if 'exp4_results' in st.session_state:
     render_section_header("Detailed Failure Mode Analysis")
     
     # Test 1: False Positives
-    with st.expander("🟡 Test 1: False Positives", expanded=True):
+    with st.expander(" Test 1: False Positives", expanded=True):
         st.markdown("#### Scenario")
         st.markdown("""
         **Setup:** Benign flow but with **3x normal volume** (simulates temporary liquidity surge)
@@ -178,11 +178,11 @@ if 'exp4_results' in st.session_state:
             {results['false_positives']['finding']}
             """)
         
-        st.markdown("#### 🛡️ Mitigation")
-        st.info(results['false_positives']['mitigation'], icon="💡")
+        st.markdown("####  Mitigation")
+        st.info(results['false_positives']['mitigation'], icon="")
     
     # Test 2: Detection Lag
-    with st.expander("🟡 Test 2: Detection Lag", expanded=False):
+    with st.expander(" Test 2: Detection Lag", expanded=False):
         st.markdown("#### Scenario")
         st.markdown("""
         **Setup:** Sudden regime switch from benign → toxic at step 500
@@ -207,11 +207,11 @@ if 'exp4_results' in st.session_state:
             {results['detection_lag']['finding']}
             """)
         
-        st.markdown("#### 🛡️ Mitigation")
-        st.info(results['detection_lag']['mitigation'], icon="💡")
+        st.markdown("####  Mitigation")
+        st.info(results['detection_lag']['mitigation'], icon="")
     
     # Test 3: Extreme Jumps
-    with st.expander("🔴 Test 3: Extreme Jumps", expanded=False):
+    with st.expander(" Test 3: Extreme Jumps", expanded=False):
         st.markdown("#### Scenario")
         st.markdown("""
         **Setup:** GBM with jump-diffusion (rare but large price moves)
@@ -236,11 +236,11 @@ if 'exp4_results' in st.session_state:
             {results['extreme_jumps']['finding']}
             """)
         
-        st.markdown("#### 🛡️ Mitigation")
-        st.info(results['extreme_jumps']['mitigation'], icon="💡")
+        st.markdown("####  Mitigation")
+        st.info(results['extreme_jumps']['mitigation'], icon="")
     
     # Test 4: High Frequency Switches
-    with st.expander("🟡 Test 4: High Frequency Switches", expanded=False):
+    with st.expander(" Test 4: High Frequency Switches", expanded=False):
         st.markdown("#### Scenario")
         st.markdown("""
         **Setup:** Regime changes every 20 steps (very rapid alternation)
@@ -265,8 +265,8 @@ if 'exp4_results' in st.session_state:
             {results['high_frequency_switches']['finding']}
             """)
         
-        st.markdown("#### 🛡️ Mitigation")
-        st.info(results['high_frequency_switches']['mitigation'], icon="💡")
+        st.markdown("####  Mitigation")
+        st.info(results['high_frequency_switches']['mitigation'], icon="")
     
     st.markdown("---")
     
@@ -294,10 +294,10 @@ if 'exp4_results' in st.session_state:
     
     summary = results['summary']
     
-    st.markdown("#### 🎯 Overall Assessment")
-    st.success(summary['overall_assessment'], icon="✅")
+    st.markdown("####  Overall Assessment")
+    st.success(summary['overall_assessment'], icon="")
     
-    st.markdown("#### 📊 Failure Mode Summary")
+    st.markdown("####  Failure Mode Summary")
     
     failure_modes = summary['failure_modes']
     
@@ -320,7 +320,7 @@ if 'exp4_results' in st.session_state:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("#### ✅ Essential Safeguards")
+        st.markdown("####  Essential Safeguards")
         st.markdown("""
         1. **Multi-signal confirmation**
            - Don't rely on VPIN alone
@@ -339,7 +339,7 @@ if 'exp4_results' in st.session_state:
         """)
     
     with col2:
-        st.markdown("#### 🎛️ Parameter Tuning")
+        st.markdown("####  Parameter Tuning")
         st.markdown("""
         4. **VPIN calibration**
            - Bucket size: 2,500-10,000 shares
@@ -368,7 +368,7 @@ if 'exp4_results' in st.session_state:
     1. **Simulation vs Reality**
        - Real markets have latency, order book dynamics, queue position
        - Assumes fills happen instantly at quoted prices
-       - No market impact from our own orders
+       - market impact from our own orders
     
     2. **VPIN Assumptions**
        - Bulk classification is approximate
@@ -381,7 +381,7 @@ if 'exp4_results' in st.session_state:
        - Correlation with broader market stress
     
     4. **Strategy Simplifications**
-       - No consideration of multiple assets
+       - consideration of multiple assets
        - Ignores correlation effects
        - Single-agent framework
     
@@ -390,7 +390,7 @@ if 'exp4_results' in st.session_state:
 
 else:
     render_info_box(
-        "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
+        " **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
         box_type='info'
     )
     
@@ -401,19 +401,19 @@ else:
     render_kpi_row({
         'False Positives': {
             'value': '$1,247',
-            'delta': '🟢 Low Impact',
+            'delta': ' Low Impact',
         },
         'Detection Lag': {
             'value': '$-524',
-            'delta': '🟡 Medium Impact',
+            'delta': ' Medium Impact',
         },
         'Extreme Jumps': {
             'value': '$-2,156',
-            'delta': '🔴 High Impact',
+            'delta': ' High Impact',
         },
         'HF Switches': {
             'value': '$-892',
-            'delta': '🟡 Medium Impact',
+            'delta': ' Medium Impact',
         },
     })
     
@@ -427,10 +427,10 @@ else:
 
 st.markdown("---")
 
-st.markdown("### 📍 Navigate Research")
+st.markdown("###  Navigate Research")
 col1, col2 = st.columns(2)
 with col1:
-    st.page_link("pages/4_🔄_Regime_Switching.py", label="← Previous: Regime Switching", icon="🔄")
+    st.page_link("pages/4_🔄_Regime_Switching.py", label="← Previous: Regime Switching", icon="")
 with col2:
-    st.page_link("pages/6_🎮_Live_Simulator.py", label="Next: Live Simulator →", icon="🎮")
+    st.page_link("pages/6_🎮_Live_Simulator.py", label="Next: Live Simulator →", icon="")
 

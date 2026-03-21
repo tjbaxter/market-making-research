@@ -33,7 +33,7 @@ except ImportError:
 
 st.set_page_config(
     page_title="Regime Switching | Market Making Research",
-    page_icon="🔄",
+    page_icon="",
     layout=LAYOUT['layout'],
     initial_sidebar_state="expanded",
 )
@@ -43,7 +43,7 @@ if css_file.exists():
     with open(css_file) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.title("🔄 Regime-Switching Strategy")
+st.title(" Regime-Switching Strategy")
 st.markdown("### *Experiment 3: Adaptive Spread Widening*")
 st.markdown("---")
 
@@ -55,7 +55,7 @@ st.markdown("""
 """)
 
 # Strategy Explanation
-with st.expander("🧠 Adaptive Strategy Design", expanded=True):
+with st.expander(" Adaptive Strategy Design", expanded=True):
     st.markdown("""
     **Base Strategy:** Avellaneda-Stoikov optimal market making
     
@@ -72,15 +72,15 @@ with st.expander("🧠 Adaptive Strategy Design", expanded=True):
     - When benign flow → **normal spreads** to maximize volume
     
     **Trade-offs:**
-    - ✅ Lower adverse selection costs
-    - ✅ Reduced drawdowns
-    - ❌ Lower fill rates
-    - ❌ Slightly lower gross PnL
+    -  Lower adverse selection costs
+    -  Reduced drawdowns
+    -  Lower fill rates
+    -  Slightly lower gross PnL
     
     **Goal:** Maximize **risk-adjusted** returns (Sharpe ratio), not absolute PnL.
     """)
 
-with st.expander("📋 Methodology", expanded=False):
+with st.expander(" Methodology", expanded=False):
     st.markdown("""
     **Approach:**
     1. Run static AS strategy (baseline) in mixed regime environment
@@ -103,14 +103,14 @@ with st.expander("📋 Methodology", expanded=False):
 if EXPERIMENTS_AVAILABLE:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        if st.button("🚀 Run Regime Switching Experiment", use_container_width=True):
+        if st.button(" Run Regime Switching Experiment", use_container_width=True):
             with st.spinner("Running adaptive strategy... (this may take 2-3 minutes)"):
                 config = ExperimentConfig(n_simulations=20, n_steps=500)
                 experiment = RegimeSwitchingExperiment(config)
                 results = experiment.run()
                 st.session_state['exp3_results'] = results
             
-            st.success("✅ Experiment complete!")
+            st.success(" Experiment complete!")
             st.rerun()
 
 if 'exp3_results' in st.session_state:
@@ -253,7 +253,7 @@ if 'exp3_results' in st.session_state:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("#### ✅ Adaptive Advantages")
+        st.markdown("####  Adaptive Advantages")
         st.markdown(f"""
         - **Significant drawdown reduction** ({comparison['drawdown_reduction_pct']:.1f}%)
         - **Better risk-adjusted returns** ({comparison['sharpe_improvement_pct']:.1f}% Sharpe improvement)
@@ -262,7 +262,7 @@ if 'exp3_results' in st.session_state:
         """)
     
     with col2:
-        st.markdown("#### ⚖️ Trade-offs")
+        st.markdown("####  Trade-offs")
         st.markdown(f"""
         - **Lower fill rate** ({(comparison['adaptive_fill_rate'] - comparison['static_fill_rate'])*100:.1f}pp decrease)
         - **Potentially lower gross PnL** ({comparison['pnl_change_pct']:+.1f}%)
@@ -270,7 +270,7 @@ if 'exp3_results' in st.session_state:
         - **Parameter sensitivity** (threshold, multiplier)
         """)
     
-    st.markdown("#### 🎯 Practical Implications")
+    st.markdown("####  Practical Implications")
     st.markdown("""
     **The adaptive strategy offers superior risk-adjusted returns**, making it preferable for:
     
@@ -290,14 +290,14 @@ if 'exp3_results' in st.session_state:
 
 else:
     render_info_box(
-        "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
+        " **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
         box_type='info'
     )
     
     # Show statistical results with error bars
     if STATS_AVAILABLE:
         st.markdown("---")
-        render_section_header("📊 Statistical Comparison (100 Runs Each)")
+        render_section_header(" Statistical Comparison (100 Runs Each)")
         
         data = get_experiment_data(3)
         
@@ -310,7 +310,7 @@ else:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.markdown("### 📈 Static Strategy")
+            st.markdown("###  Static Strategy")
             
             sharpe_mean, sharpe_std = mean_with_std(data['static_strategy']['sharpe_ratio'])
             dd_mean, dd_std = mean_with_std(data['static_strategy']['max_drawdown'])
@@ -321,7 +321,7 @@ else:
             st.metric("Total PnL", f"${pnl_mean:.0f} ± ${pnl_std:.0f}")
         
         with col2:
-            st.markdown("### 🎯 Adaptive Strategy")
+            st.markdown("###  Adaptive Strategy")
             
             sharpe_mean_adp, sharpe_std_adp = mean_with_std(data['adaptive_strategy']['sharpe_ratio'])
             dd_mean_adp, dd_std_adp = mean_with_std(data['adaptive_strategy']['max_drawdown'])
@@ -334,7 +334,7 @@ else:
         st.markdown("---")
         
         # Statistical tests
-        st.subheader("🔬 Statistical Significance")
+        st.subheader(" Statistical Significance")
         
         test_results = []
         
@@ -424,10 +424,10 @@ the trade-off for professional market makers.
 
 st.markdown("---")
 
-st.markdown("### 📍 Navigate Research")
+st.markdown("###  Navigate Research")
 col1, col2 = st.columns(2)
 with col1:
-    st.page_link("pages/3_🔍_VPIN_Analysis.py", label="← Previous: VPIN Analysis", icon="🔍")
+    st.page_link("pages/3_🔍_VPIN_Analysis.py", label="← Previous: VPIN Analysis", icon="")
 with col2:
-    st.page_link("pages/5_⚠️_Failure_Analysis.py", label="Next: Failure Analysis →", icon="⚠️")
+    st.page_link("pages/5_⚠️_Failure_Analysis.py", label="Next: Failure Analysis →", icon="")
 # Force rebuild

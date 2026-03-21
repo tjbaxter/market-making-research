@@ -22,7 +22,7 @@ from streamlit_app.sample_data import get_sensitivity_data
 # Page config
 st.set_page_config(
     page_title="Parameter Sensitivity | Market Making Research",
-    page_icon="📊",
+    page_icon="",
     layout=LAYOUT['layout'],
     initial_sidebar_state="expanded",
 )
@@ -34,10 +34,10 @@ if css_file.exists():
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Navigation
-st.page_link("app.py", label="← Back to Overview", icon="📊")
+st.page_link("app.py", label="← Back to Overview", icon="")
 
 # Header
-st.title("📊 Parameter Sensitivity Analysis")
+st.title(" Parameter Sensitivity Analysis")
 st.markdown("### *Finding Robust Parameter Ranges*")
 st.markdown("---")
 
@@ -71,7 +71,7 @@ data = get_sensitivity_data()
 # MAIN HEATMAP
 # ============================================================================
 
-render_section_header("🗺️ Performance Landscape")
+render_section_header(" Performance Landscape")
 
 st.markdown("""
 **How to read this heatmap:**
@@ -140,12 +140,12 @@ st.markdown("---")
 # ANALYSIS
 # ============================================================================
 
-render_section_header("🔍 Key Insights")
+render_section_header(" Key Insights")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("### ✅ What Works")
+    st.markdown("###  What Works")
     st.markdown("""
     **Optimal Parameter Range:**
     - **VPIN Threshold**: 0.65 - 0.75 (cyan box)
@@ -162,7 +162,7 @@ with col1:
     """)
 
 with col2:
-    st.markdown("### ⚠️ What Breaks")
+    st.markdown("###  What Breaks")
     st.markdown("""
     **Failure Regions (Red/Orange):**
     
@@ -190,7 +190,7 @@ st.markdown("---")
 # 1D SLICES
 # ============================================================================
 
-render_section_header("📈 1D Sensitivity Curves")
+render_section_header(" 1D Sensitivity Curves")
 
 st.markdown("""
 Cross-sections showing how each parameter affects performance independently.
@@ -288,7 +288,7 @@ st.markdown("---")
 # ROBUSTNESS METRICS
 # ============================================================================
 
-render_section_header("🛡️ Robustness Analysis")
+render_section_header(" Robustness Analysis")
 
 st.markdown("""
 How much does performance vary within the optimal region vs outside it?
@@ -358,24 +358,23 @@ st.markdown("---")
 # KEY TAKEAWAYS
 # ============================================================================
 
-render_section_header("💡 Key Takeaways")
+render_section_header(" Key Takeaways")
 
 render_info_box(
     """
-    **Why This Matters:**
     
     1. **Shows you test robustness**, not just find "the best" parameters
-    2. **Demonstrates robustness thinking** - what happens when conditions change?
+    2. **Robustness analysis** - behavior as conditions change
     3. **Quantifies uncertainty** - ± ranges, not just point estimates
     4. **Reveals failure modes** - where does the strategy break?
     
     **Top Findings:**
     
-    ✅ **Optimal VPIN threshold**: 0.65 - 0.75 (robust 10% range)  
-    ✅ **Optimal spread multiplier**: 1.4 - 1.6 (robust 15% range)  
-    ✅ **Expected Sharpe**: 1.35 - 1.42 (stable within optimal region)  
-    ✅ **Robustness**: <10% variation within optimal region  
-    ⚠️ **Failure modes**: Extreme parameters degrade performance predictably  
+     **Optimal VPIN threshold**: 0.65 - 0.75 (robust 10% range)  
+     **Optimal spread multiplier**: 1.4 - 1.6 (robust 15% range)  
+     **Expected Sharpe**: 1.35 - 1.42 (stable within optimal region)  
+     **Robustness**: <10% variation within optimal region  
+     **Failure modes**: Extreme parameters degrade performance predictably  
     
     **Suggested baseline**: Use VPIN=0.70, Spread=1.50 with periodic recalibration.
     """,
@@ -385,12 +384,12 @@ render_info_box(
 st.markdown("---")
 
 # Footer navigation
-st.markdown("### 📍 Navigate Research")
+st.markdown("###  Navigate Research")
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.page_link("pages/7_🔮_Future_Work.py", label="Next: Future Work →", icon="🔮")
+    st.page_link("pages/7_🔮_Future_Work.py", label="Next: Future Work →", icon="")
 with col2:
-    st.page_link("pages/5_⚠️_Failure_Analysis.py", label="← Previous: Failure Analysis", icon="⚠️")
+    st.page_link("pages/5_⚠️_Failure_Analysis.py", label="← Previous: Failure Analysis", icon="")
 with col3:
-    st.page_link("app.py", label="Back to Overview", icon="📊")
+    st.page_link("app.py", label="Back to Overview", icon="")
 

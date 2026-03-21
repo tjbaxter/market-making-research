@@ -63,9 +63,9 @@ InventoryAwareStrategy(
 ```
 
 **Typical values:**
-- `base_spread`: 0.5 - 2.0
-- `inventory_penalty`: 0.001 - 0.05
-- Higher penalty = more aggressive mean reversion
+-`base_spread`: 0.5 - 2.0
+-`inventory_penalty`: 0.001 - 0.05
+-Higher penalty = more aggressive mean reversion
 
 ### Avellaneda-Stoikov Strategy
 
@@ -80,10 +80,10 @@ AvellanedaStoikovStrategy(
 ```
 
 **Typical values:**
-- `risk_aversion`: 0.01 - 1.0 (higher = more conservative)
-- `volatility`: Match your price process (e.g., 0.02 = 2%)
-- `kappa`: Match your order flow (e.g., 0.5)
-- `T`: Total simulation steps (None = infinite horizon)
+-`risk_aversion`: 0.01 - 1.0 (higher = more conservative)
+-`volatility`: Match your price process (e.g., 0.02 = 2%)
+-`kappa`: Match your order flow (e.g., 0.5)
+-`T`: Total simulation steps (None = infinite horizon)
 
 ## Running Tests
 
@@ -259,22 +259,22 @@ assert bid < ask
 3. **AS**: Calibrate parameters to match your market model
 
 **Rule of thumb:**
-- High volatility → wider spreads needed
-- High liquidity (low kappa) → can quote tighter
-- High risk aversion → wider spreads, less trading
+-High volatility → wider spreads needed
+-High liquidity (low kappa) → can quote tighter
+-High risk aversion → wider spreads, less trading
 
 ## Next Steps
 
 After Phase 2, you can:
-1. ✅ Compare strategy performance in different market conditions
-2. ✅ Tune parameters for your specific use case
-3. ⏭️ Add VPIN toxicity detection (Phase 3)
-4. ⏭️ Run parameter sensitivity experiments (Phase 4)
-5. ⏭️ Build interactive dashboard (Phase 5)
+1.  Compare strategy performance in different market conditions
+2.  Tune parameters for your specific use case
+3. ⏭ Add VPIN toxicity detection (Phase 3)
+4. ⏭ Run parameter sensitivity experiments (Phase 4)
+5. ⏭ Build interactive dashboard (Phase 5)
 
 ## References
 
-- Avellaneda & Stoikov (2008): Original AS paper
-- Cartea et al. (2015): Inventory management approaches
-- Phase 2 tests: See `tests/test_strategies.py` for usage examples
+-Avellaneda & Stoikov (2008): Original AS paper
+-Cartea et al. (2015): Inventory management approaches
+-Phase 2 tests: See `tests/test_strategies.py` for usage examples
 

@@ -23,14 +23,14 @@ streamlit run app.py
 
 ## Notes
 
-- The dashboard can run sample analyses directly.
-- For full project integration, install from repository root with `pip install -e .`.
-- Styling is controlled by `assets/style.css` and `config.py`.
+-The dashboard can run sample analyses directly.
+-For full project integration, install from repository root with `pip install -e .`.
+-Styling is controlled by `assets/style.css` and `config.py`.
 
 ## Troubleshooting
 
-- If imports fail, ensure the package is installed from project root.
-- If CSS does not load, clear Streamlit cache.
+-If imports fail, ensure the package is installed from project root.
+-If CSS does not load, clear Streamlit cache.
 
 ## License
 

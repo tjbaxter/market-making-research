@@ -17,11 +17,11 @@ python examples/basic_simulation.py
 
 ## What You Get
 
-✅ **Complete simulation engine** for market-making research  
-✅ **20+ unit tests** - all passing  
-✅ **Production-grade code** with type hints and docstrings  
-✅ **Working example** that generates plots  
-✅ **Reproducible results** with random seeds  
+ **Complete simulation engine** for market-making research  
+ **20+ unit tests** - all passing  
+ **Production-grade code** with type hints and docstrings  
+ **Working example** that generates plots  
+ **Reproducible results** with random seeds  
 
 ## Next Steps
 
@@ -36,7 +36,6 @@ python examples/basic_simulation.py
 |------|---------|
 | `src/simulation/price_process.py` | Geometric Brownian Motion |
 | `src/simulation/order_flow.py` | Poisson order arrivals |
-| `src/simulation/accounting.py` | Portfolio & PnL tracking |
 | `src/simulation/market_simulator.py` | Main simulation engine |
 | `examples/basic_simulation.py` | Working example |
 
@@ -75,7 +74,7 @@ Repository name: **`market-making-research`**
 
 ---
 
-**Status**: Phase 1 ✅ Complete
+**Status**: Phase 1  Complete
 
 See `PHASE1_COMPLETE.md` for detailed documentation.
 

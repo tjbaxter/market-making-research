@@ -1,36 +1,35 @@
-# Market-Making Research Project - COMPLETE ✓
+# Market-Making Research Project - COMPLETE 
 
 ## Status: ALL 4 PHASES COMPLETE
 
-### Phase 1: Core Simulation ✓
-- [x] Price process (GBM with jumps)
-- [x] Order flow generator (Poisson, toxic/benign regimes)
-- [x] Portfolio accounting
-- [x] Market simulator
-- [x] All tests passing (24/24)
+### Phase 1: Core Simulation 
+-Price process (GBM with jumps)
+-Order flow generator (Poisson, toxic/benign regimes)
+-Market simulator
+-All tests passing (24/24)
 
-### Phase 2: Trading Strategies ✓
-- [x] Naive strategy (constant spread)
-- [x] Inventory-Aware strategy (skewing)
-- [x] Avellaneda-Stoikov strategy (optimal MM)
-- [x] All tests passing (20/20)
-- [x] Strategy comparison example
+### Phase 2: Trading Strategies 
+-Naive strategy (constant spread)
+-Inventory-Aware strategy (skewing)
+-Avellaneda-Stoikov strategy (optimal MM)
+-All tests passing (20/20)
+-Strategy comparison example
 
-### Phase 3: Metrics & Analytics ✓
-- [x] VPIN calculator (toxicity detection)
-- [x] PnL decomposition (adverse selection measurement)
-- [x] Performance metrics (Sharpe, drawdown, etc.)
-- [x] All tests passing (22/22)
-- [x] Analysis examples
+### Phase 3: Metrics & Analytics 
+-VPIN calculator (toxicity detection)
+-PnL decomposition (adverse selection measurement)
+-Performance metrics (Sharpe, drawdown, etc.)
+-All tests passing (22/22)
+-Analysis examples
 
-### Phase 4: Research Experiments ✓
-- [x] Exp1: PnL Decomposition (quantify adverse selection)
-- [x] Exp2: VPIN Analysis (validate toxicity detector)
-- [x] Exp3: Regime Switching (adaptive strategy)
-- [x] Exp4: Failure Analysis (edge cases)
-- [x] Experiment framework
-- [x] Tests passing (3/3)
-- [x] Report template
+### Phase 4: Research Experiments 
+-Exp1: PnL Decomposition (quantify adverse selection)
+-Exp2: VPIN Analysis (validate toxicity detector)
+-Exp3: Regime Switching (adaptive strategy)
+-Exp4: Failure Analysis (edge cases)
+-Experiment framework
+-Tests passing (3/3)
+-Report template
 
 ## Project Structure
 
@@ -58,16 +57,16 @@ market-making-research/
 **"How much does adverse selection cost, and can you detect it?"**
 
 **Answer:** 
-- Adverse selection accounts for 65-70% of losses in toxic flow
-- VPIN provides reliable real-time detection
-- Adaptive strategies reduce drawdowns by 40%
+-Adverse selection accounts for 65-70% of losses in toxic flow
+-VPIN provides reliable real-time detection
+-Adaptive strategies reduce drawdowns by 40%
 
 ## Ready For
 
-- [x] GitHub publication
-- [x] Research presentation
-- [x] MPhil thesis inclusion
-- [x] Job applications
+-GitHub publication
+-Research presentation
+-MPhil thesis inclusion
+-Job applications
 
 ## To Run
 

@@ -25,7 +25,7 @@ FONTS = {
 
 # Layout
 LAYOUT = {
-    'page_icon': '📊',
+    'page_icon': '',
     'page_title': 'Market Making Research',
     'layout': 'wide',
     'initial_sidebar_state': 'expanded',
@@ -60,27 +60,27 @@ PLOTLY_LAYOUT = {
 # Page Metadata
 PAGES_META = {
     'Overview': {
-        'icon': '📊',
+        'icon': '',
         'description': 'Executive summary of research findings',
     },
     'PnL Decomposition': {
-        'icon': '💰',
+        'icon': '',
         'description': 'Quantifying adverse selection costs',
     },
     'VPIN Analysis': {
-        'icon': '🔍',
+        'icon': '',
         'description': 'Toxicity detection validation',
     },
     'Regime Switching': {
-        'icon': '🔄',
+        'icon': '',
         'description': 'Adaptive strategy performance',
     },
     'Failure Analysis': {
-        'icon': '⚠️',
+        'icon': '',
         'description': 'Edge cases and failure modes',
     },
     'Live Simulator': {
-        'icon': '🎮',
+        'icon': '',
         'description': 'Interactive strategy testing',
     },
 }

@@ -1,16 +1,16 @@
 # Phase 1 Complete - Installation & Testing Guide
 
-## ✅ Project Created Successfully
+##  Project Created Successfully
 
 All Phase 1 files have been created with:
-- ✓ Production-grade Python code (Python 3.9+)
-- ✓ Mathematically correct implementations
-- ✓ Comprehensive docstrings
-- ✓ Type hints throughout
-- ✓ Unit tests with pytest
-- ✓ Reproducible with random seeds
+- Production-grade Python code (Python 3.9+)
+- Mathematically correct implementations
+- Comprehensive docstrings
+- Type hints throughout
+- Unit tests with pytest
+- Reproducible with random seeds
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 market-making-research/
@@ -29,7 +29,6 @@ market-making-research/
 │       ├── __init__.py          # Public API exports
 │       ├── price_process.py     # GBM with optional jumps
 │       ├── order_flow.py        # Poisson order arrivals
-│       ├── accounting.py        # Portfolio and PnL tracking
 │       └── market_simulator.py  # Main simulation engine
 │
 ├── tests/
@@ -43,7 +42,7 @@ market-making-research/
     └── basic_simulation.py      # Working example
 ```
 
-## 🚀 Installation Instructions
+##  Installation Instructions
 
 ### Option 1: Automated Installation (Recommended)
 
@@ -76,7 +75,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## 🧪 Running Tests
+##  Running Tests
 
 After installation:
 
@@ -97,9 +96,9 @@ pytest --cov=src tests/
 pytest tests/test_price_process.py -v
 ```
 
-Expected output: All tests should pass ✓
+Expected output: All tests should pass 
 
-## 🎯 Running the Example
+##  Running the Example
 
 ```bash
 # Activate virtual environment
@@ -114,36 +113,36 @@ This will:
 2. Print PnL results and decomposition
 3. Generate and save visualization plots
 
-## 📊 What the Code Does
+##  What the Code Does
 
 ### 1. Price Process (`price_process.py`)
-- Implements Geometric Brownian Motion (GBM)
-- Optional jump-diffusion for extreme events
-- Ensures prices stay positive via log-normal formulation
-- Reproducible with random seeds
+-Implements Geometric Brownian Motion (GBM)
+-Optional jump-diffusion for extreme events
+-Ensures prices stay positive via log-normal formulation
+-Reproducible with random seeds
 
 ### 2. Order Flow (`order_flow.py`)
-- Poisson arrival process for market orders
-- Exponential fill probability: λ = A * exp(-κ * δ)
-- Benign vs toxic flow regimes
-- Informed traders can predict price moves
+-Poisson arrival process for market orders
+-Exponential fill probability: λ = A * exp(-κ * δ)
+-Benign vs toxic flow regimes
+-Informed traders can predict price moves
 
 ### 3. Accounting (`accounting.py`)
-- Tracks cash and inventory
-- Records all trades with timestamps
-- Calculates PnL (realized + unrealized)
-- Decomposes PnL into components:
-  - Spread capture
-  - Inventory timing
-  - Adverse selection
+-Tracks cash and inventory
+-Records all trades with timestamps
+-Calculates PnL (realized + unrealized)
+-Decomposes PnL into components:
+  -Spread capture
+  -Inventory timing
+  -Adverse selection
 
 ### 4. Market Simulator (`market_simulator.py`)
-- Orchestrates all components
-- Runs complete simulations
-- Returns comprehensive results
-- Works with any strategy implementing the Protocol
+-Orchestrates all components
+-Runs complete simulations
+-Returns comprehensive results
+-Works with any strategy implementing the Protocol
 
-## 🧮 Core Mathematical Models
+##  Core Mathematical Models
 
 ### Geometric Brownian Motion
 ```
@@ -167,7 +166,7 @@ Total PnL = Spread Capture + Inventory Timing + Adverse Selection
 Spread Capture = Σ |executed_price - mid_price| * size
 ```
 
-## 📚 Key Features
+##  Key Features
 
 1. **Reproducibility**: All randomness is seeded
 2. **Type Safety**: Full type hints for IDE support
@@ -176,7 +175,7 @@ Spread Capture = Σ |executed_price - mid_price| * size
 5. **Clean Architecture**: Modular design with clear separation
 6. **Protocol-based**: Strategy interface via Protocol (duck typing)
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Python Version Issues
 The code requires Python 3.9+. Check your version:
@@ -201,7 +200,7 @@ If pytest is not found:
 pip install pytest pytest-cov
 ```
 
-## 📖 References
+##  References
 
 The implementations are based on:
 
@@ -216,16 +215,16 @@ The implementations are based on:
 3. **Hull, J. C. (2018)**
    *Options, Futures, and Other Derivatives* (10th ed.)
 
-## 🎯 What's Next?
+##  What's Next?
 
 Phase 1 provides the core simulation infrastructure. Next phases will add:
 
-- **Phase 2**: Trading strategies (naive, inventory-aware, Avellaneda-Stoikov)
-- **Phase 3**: VPIN toxicity detection
-- **Phase 4**: Research experiments and parameter studies
-- **Phase 5**: Interactive Streamlit dashboard
+-**Phase 2**: Trading strategies (naive, inventory-aware, Avellaneda-Stoikov)
+-**Phase 3**: VPIN toxicity detection
+-**Phase 4**: Research experiments and parameter studies
+-**Phase 5**: Interactive Streamlit dashboard
 
-## 🐙 GitHub Setup
+##  GitHub Setup
 
 To push this to GitHub as `market-making-research`:
 
@@ -237,12 +236,11 @@ git init
 git add .
 git commit -m "Phase 1: Core simulation engine
 
-- Geometric Brownian Motion price process
-- Poisson order flow with toxicity regimes
-- Portfolio accounting with PnL decomposition
-- Market simulator orchestrating all components
-- Comprehensive test suite (20+ tests)
-- Production-grade code with type hints and docstrings"
+-Geometric Brownian Motion price process
+-Poisson order flow with toxicity regimes
+-Market simulator orchestrating all components
+-Comprehensive test suite (20+ tests)
+-Production-grade code with type hints and docstrings"
 
 # Create on GitHub (using gh CLI)
 gh repo create market-making-research --public --source=. --remote=origin
@@ -257,7 +255,7 @@ git branch -M main
 git push -u origin main
 ```
 
-## ✨ Repository Description
+##  Repository Description
 
 When creating on GitHub, use:
 
@@ -267,19 +265,19 @@ Advanced market-making research engine quantifying adverse selection costs with 
 ```
 
 **Topics:**
-- quantitative-finance
-- algorithmic-trading
-- market-making
-- adverse-selection
-- avellaneda-stoikov
-- vpin
-- market-microstructure
-- python
-- research
+-quantitative-finance
+-algorithmic-trading
+-market-making
+-adverse-selection
+-avellaneda-stoikov
+-vpin
+-market-microstructure
+-python
+-research
 
 ---
 
-**Project Status**: Phase 1 Complete ✅
+**Project Status**: Phase 1 Complete 
 
 All code is production-ready with comprehensive tests and documentation.
 

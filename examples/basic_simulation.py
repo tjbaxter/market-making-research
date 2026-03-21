@@ -1,7 +1,7 @@
 """
 Basic simulation example.
 
-Demonstrates how to run a simple market-making simulation.
+Runs a simple market-making simulation.
 """
 
 import matplotlib.pyplot as plt

@@ -42,7 +42,7 @@ except ImportError:
 # Page config
 st.set_page_config(
     page_title="PnL Decomposition | Market Making Research",
-    page_icon="💰",
+    page_icon="",
     layout=LAYOUT['layout'],
     initial_sidebar_state="expanded",
 )
@@ -54,7 +54,7 @@ if css_file.exists():
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Header
-st.title("💰 PnL Decomposition Analysis")
+st.title(" PnL Decomposition Analysis")
 st.markdown("### *Experiment 1: Quantifying Adverse Selection Costs*")
 st.markdown("---")
 
@@ -67,7 +67,7 @@ st.markdown("""
 """)
 
 # Methodology
-with st.expander("📋 Methodology", expanded=False):
+with st.expander(" Methodology", expanded=False):
     st.markdown("""
     **Approach:**
     1. Run three strategies (Naive, Inventory-Aware, AS) in benign flow
@@ -89,7 +89,7 @@ with st.expander("📋 Methodology", expanded=False):
 if EXPERIMENTS_AVAILABLE:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        if st.button("🚀 Run PnL Decomposition Experiment", use_container_width=True):
+        if st.button(" Run PnL Decomposition Experiment", use_container_width=True):
             with st.spinner("Running simulations... (this may take 1-2 minutes)"):
                 # Create config with fewer simulations for demo
                 config = ExperimentConfig(n_simulations=20, n_steps=500)
@@ -101,7 +101,7 @@ if EXPERIMENTS_AVAILABLE:
                 # Store in session state
                 st.session_state['exp1_results'] = results
             
-            st.success("✅ Experiment complete!")
+            st.success(" Experiment complete!")
             st.rerun()
 
 # Check if results exist
@@ -175,7 +175,7 @@ if 'exp1_results' in st.session_state:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("#### ✅ What Works")
+        st.markdown("####  What Works")
         st.markdown("""
         - **AS strategy** partially mitigates adverse selection
         - **Inventory management** reduces exposure
@@ -183,14 +183,14 @@ if 'exp1_results' in st.session_state:
         """)
     
     with col2:
-        st.markdown("#### ❌ What Doesn't")
+        st.markdown("####  What Doesn't")
         st.markdown("""
         - **Naive strategy** extremely vulnerable
         - **Static spreads** cannot adapt to toxicity
         - **Ignore adverse selection** at your peril
         """)
     
-    st.markdown("#### 🎯 Implications")
+    st.markdown("####  Implications")
     st.markdown("""
     1. **Adverse selection dominates losses** in toxic regimes (68% average)
     2. **Detection is critical** - need real-time toxicity monitoring
@@ -203,14 +203,14 @@ if 'exp1_results' in st.session_state:
 else:
     # Show sample results
     render_info_box(
-        "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
+        " **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
         box_type='info'
     )
     
     # Show statistical results with error bars
     if STATS_AVAILABLE:
         st.markdown("---")
-        render_section_header("📊 Statistical Results (100 Runs)")
+        render_section_header(" Statistical Results (100 Runs)")
         
         data = get_experiment_data(1)
         
@@ -220,7 +220,7 @@ else:
         """)
         
         # Summary metrics
-        st.subheader("💰 Total PnL Comparison")
+        st.subheader(" Total PnL Comparison")
         
         col1, col2, col3 = st.columns(3)
         
@@ -252,7 +252,7 @@ else:
         st.markdown("---")
         
         # Adverse selection breakdown
-        st.subheader("🎯 Adverse Selection Analysis")
+        st.subheader(" Adverse Selection Analysis")
         
         comparison_rows = []
         
@@ -333,10 +333,10 @@ else:
 st.markdown("---")
 
 # Navigation
-st.markdown("### 📍 Navigate Research")
+st.markdown("###  Navigate Research")
 col1, col2 = st.columns(2)
 with col1:
-    st.page_link("pages/3_🔍_VPIN_Analysis.py", label="Next: VPIN Analysis →", icon="🔍")
+    st.page_link("pages/3_🔍_VPIN_Analysis.py", label="Next: VPIN Analysis →", icon="")
 with col2:
-    st.page_link("app.py", label="← Back to Overview", icon="📊")
+    st.page_link("app.py", label="← Back to Overview", icon="")
 

@@ -33,7 +33,7 @@ except ImportError:
 
 st.set_page_config(
     page_title="VPIN Analysis | Market Making Research",
-    page_icon="🔍",
+    page_icon="",
     layout=LAYOUT['layout'],
     initial_sidebar_state="expanded",
 )
@@ -43,7 +43,7 @@ if css_file.exists():
     with open(css_file) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.title("🔍 VPIN Analysis")
+st.title(" VPIN Analysis")
 st.markdown("### *Experiment 2: Validating Toxicity Detection*")
 st.markdown("---")
 
@@ -55,7 +55,7 @@ st.markdown("""
 """)
 
 # VPIN Explanation
-with st.expander("📚 What is VPIN?", expanded=False):
+with st.expander(" What is VPIN?", expanded=False):
     st.markdown("""
     **VPIN** = Volume-Synchronized Probability of Informed Trading
     
@@ -79,11 +79,11 @@ with st.expander("📚 What is VPIN?", expanded=False):
     **Advantages:**
     - Volume-synchronized (not time-based)
     - Real-time calculation
-    - No need for trade direction labels
+    - need for trade direction labels
     - Proven correlation with market stress events
     """)
 
-with st.expander("📋 Methodology", expanded=False):
+with st.expander(" Methodology", expanded=False):
     st.markdown("""
     **Approach:**
     1. Run simulations with alternating toxicity (benign → toxic → benign)
@@ -103,14 +103,14 @@ with st.expander("📋 Methodology", expanded=False):
 if EXPERIMENTS_AVAILABLE:
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        if st.button("🚀 Run VPIN Analysis Experiment", use_container_width=True):
+        if st.button(" Run VPIN Analysis Experiment", use_container_width=True):
             with st.spinner("Running VPIN analysis... (this may take 2-3 minutes)"):
                 config = ExperimentConfig(n_simulations=20, n_steps=500)
                 experiment = VPINAnalysisExperiment(config)
                 results = experiment.run()
                 st.session_state['exp2_results'] = results
             
-            st.success("✅ Experiment complete!")
+            st.success(" Experiment complete!")
             st.rerun()
 
 if 'exp2_results' in st.session_state:
@@ -233,7 +233,7 @@ if 'exp2_results' in st.session_state:
         'Value': [
             f"{correlation['correlation_coefficient']:.4f}",
             f"{correlation['p_value']:.6f}",
-            '✅ Yes (p < 0.05)' if correlation['significant'] else '❌ No',
+            ' Yes (p < 0.05)' if correlation['significant'] else ' No',
             f"${predictive['mean_loss_when_low_vpin']:.2f}",
             f"${predictive['mean_loss_when_high_vpin']:.2f}",
             f"{predictive['loss_ratio']:.2f}x",
@@ -261,7 +261,7 @@ if 'exp2_results' in st.session_state:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("#### ✅ VPIN Validation")
+        st.markdown("####  VPIN Validation")
         st.markdown(f"""
         - **Strong predictive power** ({predictive['loss_ratio']:.1f}x loss increase)
         - **Statistically significant** (p = {correlation['p_value']:.4f})
@@ -270,7 +270,7 @@ if 'exp2_results' in st.session_state:
         """)
     
     with col2:
-        st.markdown("#### 🎯 Practical Applications")
+        st.markdown("####  Practical Applications")
         st.markdown("""
         - **Dynamic spread widening** when VPIN > 0.7
         - **Position size reduction** in high toxicity
@@ -278,7 +278,7 @@ if 'exp2_results' in st.session_state:
         - **Risk monitoring** dashboard integration
         """)
     
-    st.markdown("#### 🔬 Limitations")
+    st.markdown("####  Limitations")
     st.markdown("""
     1. **Detection lag** - VPIN requires 50-100 steps to react to regime changes
     2. **False positives** - High volume (not toxicity) can spike VPIN
@@ -290,14 +290,14 @@ if 'exp2_results' in st.session_state:
 
 else:
     render_info_box(
-        "📊 **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
+        " **Viewing pre-generated sample results.** Live experiments require running the full project locally.",
         box_type='info'
     )
     
     # Show statistical results
     if STATS_AVAILABLE:
         st.markdown("---")
-        render_section_header("📊 Statistical Validation")
+        render_section_header(" Statistical Validation")
         
         data = get_experiment_data(2)
         
@@ -331,7 +331,7 @@ else:
         st.markdown("---")
         
         # Scatter plot
-        st.subheader("📈 VPIN vs Subsequent Losses")
+        st.subheader(" VPIN vs Subsequent Losses")
         
         import plotly.graph_objects as go
         
@@ -430,9 +430,9 @@ as a reliable toxicity detector.
 
 st.markdown("---")
 
-st.markdown("### 📍 Navigate Research")
+st.markdown("###  Navigate Research")
 col1, col2 = st.columns(2)
 with col1:
-    st.page_link("pages/2_💰_PnL_Decomposition.py", label="← Previous: PnL Decomposition", icon="💰")
+    st.page_link("pages/2_💰_PnL_Decomposition.py", label="← Previous: PnL Decomposition", icon="")
 with col2:
-    st.page_link("pages/4_🔄_Regime_Switching.py", label="Next: Regime Switching →", icon="🔄")
+    st.page_link("pages/4_🔄_Regime_Switching.py", label="Next: Regime Switching →", icon="")

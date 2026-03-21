@@ -97,13 +97,13 @@ def render_info_box(text, box_type='info'):
         box_type: 'info', 'success', 'warning', 'error'
     """
     if box_type == 'info':
-        st.info(text, icon='ℹ️')
+        st.info(text, icon='ℹ')
     elif box_type == 'success':
-        st.success(text, icon='✅')
+        st.success(text, icon='')
     elif box_type == 'warning':
-        st.warning(text, icon='⚠️')
+        st.warning(text, icon='')
     elif box_type == 'error':
-        st.error(text, icon='🚨')
+        st.error(text, icon='')
 
 def render_section_header(title, description=None):
     """Render section header with optional description."""

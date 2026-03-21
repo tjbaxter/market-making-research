@@ -1,16 +1,16 @@
 # Phase 2 Complete - Trading Strategies
 
-## ✅ Phase 2 Successfully Implemented
+##  Phase 2 Successfully Implemented
 
 All three market-making strategies have been implemented with:
-- ✓ Mathematically correct formulas (especially AS)
-- ✓ Production-grade Python code
-- ✓ Comprehensive docstrings with references
-- ✓ Type hints throughout
-- ✓ Full parameter validation
-- ✓ 30+ unit and integration tests
+- Mathematically correct formulas (especially AS)
+- Production-grade Python code
+- Comprehensive docstrings with references
+- Type hints throughout
+- Full parameter validation
+- 30+ unit and integration tests
 
-## 📂 New Files Created
+##  New Files Created
 
 ### Strategy Implementations
 
@@ -38,7 +38,7 @@ examples/
 └── strategy_comparison.py          # Visual comparison of all strategies
 ```
 
-## 🎯 Strategies Implemented
+##  Strategies Implemented
 
 ### 1. Naive Strategy
 
@@ -50,9 +50,9 @@ ask = mid + spread/2
 ```
 
 **Characteristics:**
-- No inventory management
-- Will accumulate large positions
-- Serves as performance baseline
+-inventory management
+-Will accumulate large positions
+-Serves as performance baseline
 
 **Usage:**
 ```python
@@ -74,9 +74,9 @@ ask = mid + base_spread/2 - skew
 ```
 
 **Characteristics:**
-- When long: lowers quotes to encourage selling
-- When short: raises quotes to encourage buying
-- Simple but effective inventory control
+-When long: lowers quotes to encourage selling
+-When short: raises quotes to encourage buying
+-Simple but effective inventory control
 
 **Usage:**
 ```python
@@ -113,18 +113,18 @@ strategy = InventoryAwareStrategy(
    ```
 
 **Where:**
-- `S` = mid price
-- `q` = inventory
-- `γ` = risk aversion
-- `σ` = volatility
-- `τ` = time remaining
-- `κ` = liquidity parameter
+-`S` = mid price
+-`q` = inventory
+-`γ` = risk aversion
+-`σ` = volatility
+-`τ` = time remaining
+-`κ` = liquidity parameter
 
 **Characteristics:**
-- Maximizes expected utility of terminal wealth
-- Accounts for inventory risk
-- Adjusts for time to horizon
-- Adapts to volatility
+-Maximizes expected utility of terminal wealth
+-Accounts for inventory risk
+-Adjusts for time to horizon
+-Adapts to volatility
 
 **Usage:**
 ```python
@@ -140,7 +140,7 @@ strategy = AvellanedaStoikovStrategy(
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Run Unit Tests
 
@@ -164,12 +164,12 @@ pytest tests/test_strategy_comparison.py -v
 tests/test_strategies.py ......................... PASSED [100%]
 tests/test_strategy_comparison.py ................ PASSED [100%]
 
-30+ tests passing ✓
+30+ tests passing 
 ```
 
 ---
 
-## 📊 Running the Comparison Example
+##  Running the Comparison Example
 
 ```bash
 # Make sure virtual environment is activated
@@ -183,10 +183,10 @@ python examples/strategy_comparison.py
 1. Run all 3 strategies for 1000 time steps
 2. Print performance comparison table
 3. Generate 4-panel visualization:
-   - PnL evolution over time
-   - Inventory evolution
-   - PnL decomposition (spread capture vs adverse selection)
-   - Normalized metrics comparison
+   -PnL evolution over time
+   -Inventory evolution
+   -PnL decomposition (spread capture vs adverse selection)
+   -rmalized metrics comparison
 4. Save plot as `strategy_comparison.png`
 
 **Example Output:**
@@ -216,91 +216,91 @@ Final PnL: $1456.78
 
 ---
 
-## 🧮 Mathematical Correctness
+##  Mathematical Correctness
 
 ### Avellaneda-Stoikov Implementation Details
 
 1. **Optimal Spread Calculation:**
-   - For small `γ/κ`: Uses linear approximation `δ ≈ 1/κ`
-   - For larger values: Solves implicit equation using `scipy.optimize.brentq`
-   - Fallback: Closed-form approximation `δ = log(1 + γ/κ) / γ`
+   -For small `γ/κ`: Uses linear approximation `δ ≈ 1/κ`
+   -For larger values: Solves implicit equation using `scipy.optimize.brentq`
+   -Fallback: Closed-form approximation `δ = log(1 + γ/κ) / γ`
 
 2. **Reservation Price:**
-   - Adjusts linearly with inventory
-   - Scales with time remaining (finite horizon)
-   - Can adapt to realized volatility
+   -Adjusts linearly with inventory
+   -Scales with time remaining (finite horizon)
+   -Can adapt to realized volatility
 
 3. **Quote Placement:**
-   - Symmetric around reservation price (not mid price)
-   - Adapts spread based on current volatility
+   -Symmetric around reservation price (not mid price)
+   -Adapts spread based on current volatility
 
 ### References Implemented
 
 1. **Avellaneda & Stoikov (2008)**
-   - "High-frequency trading in a limit order book"
-   - *Quantitative Finance*, 8(3), 217-224
-   - ✓ Formulas (1)-(7) correctly implemented
+   -"High-frequency trading in a limit order book"
+   -*Quantitative Finance*, 8(3), 217-224
+   - Formulas (1)-(7) correctly implemented
 
 2. **Cartea, Jaimungal & Penalva (2015)**
-   - *Algorithmic and High-Frequency Trading*
-   - ✓ Inventory skewing approach
+   -*Algorithmic and High-Frequency Trading*
+   - Inventory skewing approach
 
 ---
 
-## 🎨 Key Features
+##  Key Features
 
 ### Base Strategy Infrastructure
 
 **All strategies inherit from `BaseStrategy`:**
-- Abstract `get_quotes()` method
-- Automatic quote validation (ensures bid < ask)
-- Quote history tracking
-- Reset functionality
+-Abstract `get_quotes()` method
+-Automatic quote validation (ensures bid < ask)
+-Quote history tracking
+-Reset functionality
 
 **Benefits:**
-- Consistent interface
-- Easy to add new strategies
-- Built-in safety checks
+-Consistent interface
+-Easy to add new strategies
+-Built-in safety checks
 
 ### Parameter Validation
 
 All strategies validate inputs:
 ```python
 # Raises ValueError for invalid parameters
-NaiveStrategy(spread_width=-1.0)  # ✗ 
-InventoryAwareStrategy(base_spread=0)  # ✗
-AvellanedaStoikovStrategy(risk_aversion=-0.1)  # ✗
+NaiveStrategy(spread_width=-1.0)  #  
+InventoryAwareStrategy(base_spread=0)  # 
+AvellanedaStoikovStrategy(risk_aversion=-0.1)  # 
 ```
 
 ### Reproducibility
 
 All strategies are deterministic:
-- No internal randomness
-- Same state → same quotes
-- Fully testable
+-internal randomness
+-Same state → same quotes
+-Fully testable
 
 ---
 
-## 📈 Performance Characteristics
+##  Performance Characteristics
 
 ### Naive Strategy
-- **Pros:** Simple, captures spread consistently
-- **Cons:** Poor inventory control, high inventory risk
-- **Use:** Baseline for comparison
+-**Pros:** Simple, captures spread consistently
+-**Cons:** Poor inventory control, high inventory risk
+-**Use:** Baseline for comparison
 
 ### Inventory-Aware Strategy
-- **Pros:** Good inventory control, simple to understand
-- **Cons:** Linear skewing may be suboptimal
-- **Use:** Practical implementation with good risk management
+-**Pros:** Good inventory control, simple to understand
+-**Cons:** Linear skewing may be suboptimal
+-**Use:** Practical implementation with good risk management
 
 ### Avellaneda-Stoikov Strategy
-- **Pros:** Theoretically optimal, accounts for risk
-- **Cons:** Requires parameter calibration
-- **Use:** Sophisticated market-making with risk constraints
+-**Pros:** Theoretically optimal, accounts for risk
+-**Cons:** Requires parameter calibration
+-**Use:** Sophisticated market-making with risk constraints
 
 ---
 
-## 🔬 Integration with Phase 1
+##  Integration with Phase 1
 
 Strategies integrate seamlessly with Phase 1 simulation:
 
@@ -332,7 +332,7 @@ print(f"Final PnL: ${results.final_pnl:.2f}")
 
 ---
 
-## 🐙 Git Commit Message
+##  Git Commit Message
 
 When pushing Phase 2:
 
@@ -340,48 +340,48 @@ When pushing Phase 2:
 git add .
 git commit -m "Phase 2: Trading Strategies
 
-- Implemented 3 market-making strategies
-  * Naive (constant spread baseline)
-  * Inventory-Aware (position-based skewing)
-  * Avellaneda-Stoikov (optimal risk-aware quotes)
-- All strategies inherit from BaseStrategy ABC
-- Comprehensive test suite (30+ tests)
-- Strategy comparison example with visualization
-- Mathematically correct AS implementation
-- Full parameter validation and type hints
-- Production-grade code with docstrings
+-Implemented 3 market-making strategies
+  *Naive (constant spread baseline)
+  *Inventory-Aware (position-based skewing)
+  *Avellaneda-Stoikov (optimal risk-aware quotes)
+-All strategies inherit from BaseStrategy ABC
+-Comprehensive test suite (30+ tests)
+-Strategy comparison example with visualization
+-Mathematically correct AS implementation
+-Full parameter validation and type hints
+-Production-grade code with docstrings
 
 References:
-- Avellaneda & Stoikov (2008)
-- Cartea, Jaimungal & Penalva (2015)"
+-Avellaneda & Stoikov (2008)
+-Cartea, Jaimungal & Penalva (2015)"
 
 git push
 ```
 
 ---
 
-## ✨ Code Quality
+##  Code Quality
 
-- **Zero linter errors** ✓
-- **All tests passing** ✓
-- **Type hints throughout** ✓
-- **Comprehensive docstrings** ✓
-- **Mathematical formulas documented** ✓
-- **Academic references cited** ✓
+-**Zero linter errors** 
+-**All tests passing** 
+-**Type hints throughout** 
+-**Comprehensive docstrings** 
+-**Mathematical formulas documented** 
+-**Academic references cited** 
 
 ---
 
-## 🎯 What's Next
+##  What's Next
 
 Phase 2 provides three complete strategies. Future phases will add:
 
-- **Phase 3:** VPIN toxicity detection
-- **Phase 4:** Research experiments (parameter sensitivity, regime comparison)
-- **Phase 5:** Interactive Streamlit dashboard
+-**Phase 3:** VPIN toxicity detection
+-**Phase 4:** Research experiments (parameter sensitivity, regime comparison)
+-**Phase 5:** Interactive Streamlit dashboard
 
 ---
 
-## 📚 Usage Examples
+##  Usage Examples
 
 ### Compare Strategies
 
@@ -433,7 +433,7 @@ for state in states:
 
 ---
 
-**Status:** Phase 2 Complete ✅
+**Status:** Phase 2 Complete 
 
 All strategies implemented, tested, and ready for research experiments.
 
