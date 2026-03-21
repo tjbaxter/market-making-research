@@ -371,10 +371,10 @@ st.markdown("""
 
 ### Why This is Still Valuable:
 
-1. **Educational**: Demonstrates key market microstructure concepts
+1. **Conceptual**: Demonstrates key market microstructure concepts
 2. **Methodological**: Provides template for MM research
 3. **Extensible**: Clean codebase for future enhancements
-4. **Interview-Ready**: Shows awareness of limitations (critical thinking)
+4. **Transparent**: Explicitly documents assumptions and limitations
 
 ### For Future Researchers:
 
@@ -392,20 +392,14 @@ st.markdown("---")
 # CALL TO ACTION
 # ============================================================================
 
-st.markdown("### 🎓 Want to Collaborate?")
+st.markdown("### Notes")
 
 st.info("""
-**This project is open-source and welcomes contributions!**
+This project is open-source and can be extended in several directions:
 
-Interested in extending this research? Reach out via:
-- **GitHub**: [github.com/yourusername/market-making-research](https://github.com)
-- **Email**: your.email@example.com
-- **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com)
-
-Particularly interested in collaboration on:
-- Real data calibration studies
+- real data calibration studies
 - RL-based market making strategies
-- Multi-asset extensions
+- multi-asset extensions
 """)
 
 # Footer
