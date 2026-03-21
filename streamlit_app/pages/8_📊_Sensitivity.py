@@ -358,25 +358,16 @@ st.markdown("---")
 # KEY TAKEAWAYS
 # ============================================================================
 
-render_section_header(" Key Takeaways")
+render_section_header(" Summary Statistics")
 
 render_info_box(
     """
-    
-    1. **Shows you test robustness**, not just find "the best" parameters
-    2. **Robustness analysis** - behavior as conditions change
-    3. **Quantifies uncertainty** - ± ranges, not just point estimates
-    4. **Reveals failure modes** - where does the strategy break?
-    
-    **Top Findings:**
-    
-     **Optimal VPIN threshold**: 0.65 - 0.75 (robust 10% range)  
-     **Optimal spread multiplier**: 1.4 - 1.6 (robust 15% range)  
-     **Expected Sharpe**: 1.35 - 1.42 (stable within optimal region)  
-     **Robustness**: <10% variation within optimal region  
-     **Failure modes**: Extreme parameters degrade performance predictably  
-    
-    **Suggested baseline**: Use VPIN=0.70, Spread=1.50 with periodic recalibration.
+    - **Optimal VPIN threshold**: 0.65 - 0.75
+    - **Optimal spread multiplier**: 1.4 - 1.6
+    - **Expected Sharpe**: 1.35 - 1.42 within the selected region
+    - **Variation within selected region**: <10%
+    - **Observed failure mode**: performance degrades under extreme parameter choices
+    - **Baseline configuration**: VPIN=0.70, Spread=1.50
     """,
     box_type='success'
 )
